@@ -1,1 +1,22 @@
+n_and_m = input()
+n = int(n_and_m[0:n_and_m.find(' ')])
+m = int(n_and_m[n_and_m.find(' '):len(n_and_m)])
 
+array = [i + 1 for i in range(n)]
+result = ''
+i, j = 0, m
+while True:
+    s1 = []
+    while len(array) <= j:
+        array += array
+    for i in range(i, j):
+        s1.append(array[i])
+    if s1[m-1] != 1:
+        result += str(s1[0])
+    else:
+        result += str(s1[0])
+        break
+    i = j - 1
+    j += m - 1
+
+print(result)
